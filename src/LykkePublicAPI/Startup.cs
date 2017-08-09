@@ -127,7 +127,7 @@ namespace LykkePublicAPI
                     async () => (await assetsRepo.GetAssetsAsync()).ToDictionary(itm => itm.Id));
             });
 
-            services.AddSingleton<IDutchAuctionService>(x => new DutchAuctionService(settings.PrivateApi.DutchAuctionServiceUri));
+            services.AddSingleton<IDutchAuctionService>(x => new DutchAuctionService(new Uri(settings.PrivateApi.DutchAuctionServiceUri)));
 
             services.AddDistributedRedisCache(options =>
             {
