@@ -18,8 +18,8 @@ namespace Core.Domain.Settings
 
     public class PrivateApiSettings
     {
-        public Uri DutchAuctionServiceUri { get; set; }
-        public Uri MarketProfileServiceUri { get; set; }
+        public string DutchAuctionServiceUri { get; set; }
+        public string MarketProfileServiceUri { get; set; }
     }
 
     public class LykkeCompanyData

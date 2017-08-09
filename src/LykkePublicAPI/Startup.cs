@@ -134,7 +134,7 @@ namespace LykkePublicAPI
                 options.InstanceName = settings.CacheSettings.FinanceDataCacheInstance;
             });
 
-            services.AddSingleton<ILykkeMarketProfileServiceAPI>(x => new LykkeMarketProfileServiceAPI(settings.PrivateApi.MarketProfileServiceUri));
+            services.AddSingleton<ILykkeMarketProfileServiceAPI>(x => new LykkeMarketProfileServiceAPI(new Uri(settings.PrivateApi.MarketProfileServiceUri)));
 
             services.AddTransient<IOrderBooksService, OrderBookService>();
             services.AddTransient<IMarketCapitalizationService, MarketCapitalizationService>();
